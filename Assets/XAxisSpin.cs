@@ -17,9 +17,9 @@ public class XAxisSpin : MonoBehaviour
     // Recommended reading:
     // - https://docs.unity3d.com/Manual/ExecutionOrder.html
     private void Update()
-    {
-        var angle = this.spinSpeed * Time.deltaTime;
+    {   
+        var angle = this.spinSpeed * Time.time;
         var axis = new Vector3(1.0f, 0.0f, 0.0f);
-        transform.localRotation *= Quaternion.AngleAxis(angle, axis);
+        transform.localRotation = Quaternion.AngleAxis(angle, axis);
     }
 }
